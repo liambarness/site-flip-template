@@ -1,12 +1,22 @@
 import { Phone, Mail, MapPin, Star, Clock, ChevronRight } from "./icons";
 
+/**
+ * Landing page template — intentionally generic.
+ *
+ * V0 should replace ALL placeholder content below with real business data.
+ * If any section cannot be customized (missing data), V0 should remove that
+ * section entirely rather than leaving placeholder text.
+ *
+ * Sections: Nav, Hero, Services, About, Testimonials, Contact, Footer
+ */
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <span className="text-xl font-bold">Business Name</span>
+          <span className="text-xl font-bold">[Business Name]</span>
           <div className="hidden items-center gap-8 md:flex">
             <a href="#services" className="text-sm text-gray-600 hover:text-gray-900">
               Services
@@ -22,10 +32,10 @@ export default function Home() {
             </a>
           </div>
           <a
-            href="tel:+15551234567"
+            href="#contact"
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
-            Call Now
+            Contact Us
           </a>
         </div>
       </nav>
@@ -35,41 +45,26 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Professional Services You Can Trust
+              [Headline goes here]
             </h1>
             <p className="mt-4 text-lg text-blue-100 md:text-xl">
-              Serving the local community with quality and care. Contact us today
-              for a free consultation.
+              [Subheadline — a short sentence about what this business does and
+              why customers should care.]
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href="tel:+15551234567"
+                href="#contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-blue-700 hover:bg-blue-50"
               >
-                <Phone />
-                (555) 123-4567
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10"
-              >
-                Get a Free Quote
+                Get Started
                 <ChevronRight />
               </a>
-            </div>
-            <div className="mt-6 flex items-center gap-2 text-sm text-blue-100">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} />
-                ))}
-              </div>
-              <span>4.8/5 from 120+ reviews</span>
             </div>
           </div>
         </div>
         <img
           src="https://picsum.photos/1200/800"
-          alt="Hero background"
+          alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-10"
         />
       </section>
@@ -78,39 +73,23 @@ export default function Home() {
       <section id="services" className="px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Our Services</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Services</h2>
             <p className="mt-3 text-gray-600">
-              Quality solutions tailored to your needs
+              [Brief intro to services offered]
             </p>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Service One",
-                description:
-                  "A short description of this service and why customers love it.",
-              },
-              {
-                title: "Service Two",
-                description:
-                  "A short description of this service and why customers love it.",
-              },
-              {
-                title: "Service Three",
-                description:
-                  "A short description of this service and why customers love it.",
-              },
-            ].map((service) => (
+            {[1, 2, 3].map((n) => (
               <div
-                key={service.title}
+                key={n}
                 className="rounded-xl border border-gray-100 bg-gray-50 p-6 transition hover:shadow-md"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
                   <Clock />
                 </div>
-                <h3 className="text-lg font-semibold">{service.title}</h3>
+                <h3 className="text-lg font-semibold">[Service {n}]</h3>
                 <p className="mt-2 text-sm text-gray-600">
-                  {service.description}
+                  [Description of service {n}]
                 </p>
               </div>
             ))}
@@ -122,23 +101,16 @@ export default function Home() {
       <section id="about" className="bg-gray-50 px-4 py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold md:text-4xl">
-              About Our Business
-            </h2>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              With years of experience serving the local community, we take pride
-              in delivering exceptional results. Our team is dedicated to quality
-              workmanship and customer satisfaction.
-            </p>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              We believe in honest pricing, reliable service, and building
-              long-term relationships with our customers.
+            <h2 className="text-3xl font-bold md:text-4xl">About</h2>
+            <p className="mt-4 leading-relaxed text-gray-600">
+              [A paragraph about the business — who they are, how long
+              they&apos;ve been operating, and what sets them apart.]
             </p>
           </div>
           <div className="overflow-hidden rounded-xl">
             <img
               src="https://picsum.photos/600/400"
-              alt="About our business"
+              alt=""
               className="h-full w-full object-cover"
             />
           </div>
@@ -149,44 +121,26 @@ export default function Home() {
       <section id="reviews" className="px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">
-              What Our Customers Say
-            </h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Reviews</h2>
             <p className="mt-3 text-gray-600">
-              Real reviews from real customers
+              [What customers are saying]
             </p>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                name: "Customer Name",
-                text: "Excellent service from start to finish. Highly recommend to anyone looking for quality work.",
-                rating: 5,
-              },
-              {
-                name: "Customer Name",
-                text: "Professional, punctual, and great attention to detail. Will definitely use again.",
-                rating: 5,
-              },
-              {
-                name: "Customer Name",
-                text: "Fair pricing and outstanding results. They went above and beyond our expectations.",
-                rating: 5,
-              },
-            ].map((review, i) => (
+            {[1, 2, 3].map((n) => (
               <div
-                key={i}
+                key={n}
                 className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm"
               >
                 <div className="mb-3 flex">
-                  {[...Array(review.rating)].map((_, j) => (
+                  {[...Array(5)].map((_, j) => (
                     <Star key={j} />
                   ))}
                 </div>
-                <p className="text-sm text-gray-600 italic">
-                  &ldquo;{review.text}&rdquo;
+                <p className="text-sm italic text-gray-600">
+                  &ldquo;[Review text {n}]&rdquo;
                 </p>
-                <p className="mt-4 text-sm font-semibold">{review.name}</p>
+                <p className="mt-4 text-sm font-semibold">[Reviewer {n}]</p>
               </div>
             ))}
           </div>
@@ -200,20 +154,20 @@ export default function Home() {
             <div>
               <h2 className="text-3xl font-bold md:text-4xl">Get in Touch</h2>
               <p className="mt-3 text-gray-600">
-                Ready to get started? Reach out for a free consultation.
+                [Call-to-action text encouraging visitors to reach out.]
               </p>
               <div className="mt-8 space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone />
-                  <span>(555) 123-4567</span>
+                  <span>[Phone number]</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail />
-                  <span>info@business.com</span>
+                  <span>[Email address]</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin />
-                  <span>123 Main Street, City, State 12345</span>
+                  <span>[Street address]</span>
                 </div>
               </div>
             </div>
@@ -222,7 +176,7 @@ export default function Home() {
                 <label className="mb-1 block text-sm font-medium">Name</label>
                 <input
                   type="text"
-                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="Your name"
                 />
               </div>
@@ -230,7 +184,7 @@ export default function Home() {
                 <label className="mb-1 block text-sm font-medium">Email</label>
                 <input
                   type="email"
-                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="your@email.com"
                 />
               </div>
@@ -240,7 +194,7 @@ export default function Home() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                   placeholder="How can we help?"
                 />
               </div>
@@ -258,8 +212,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-100 bg-white px-4 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-gray-500 md:flex-row">
-          <span>&copy; {new Date().getFullYear()} Business Name. All rights reserved.</span>
-          <span>123 Main Street, City, State 12345</span>
+          <span>
+            &copy; {new Date().getFullYear()} [Business Name]. All rights
+            reserved.
+          </span>
+          <span>[Street address]</span>
         </div>
       </footer>
     </div>
